@@ -16,6 +16,8 @@
 		BC56B0FB2A0A918B00099FCA /* Assignment3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56B0FA2A0A918B00099FCA /* Assignment3Tests.swift */; };
 		BC56B1052A0A918B00099FCA /* Assignment3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56B1042A0A918B00099FCA /* Assignment3UITests.swift */; };
 		BC56B1072A0A918B00099FCA /* Assignment3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC56B1062A0A918B00099FCA /* Assignment3UITestsLaunchTests.swift */; };
+		DE7AF5CC2A145EDB005891F5 /* BookingHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF5CB2A145EDB005891F5 /* BookingHistoryViewController.swift */; };
+		DE7AF5CE2A145F1C005891F5 /* IssuedTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF5CD2A145F1C005891F5 /* IssuedTicketsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		BC56B1002A0A918B00099FCA /* Assignment3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assignment3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC56B1042A0A918B00099FCA /* Assignment3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment3UITests.swift; sourceTree = "<group>"; };
 		BC56B1062A0A918B00099FCA /* Assignment3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment3UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DE7AF5CB2A145EDB005891F5 /* BookingHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHistoryViewController.swift; sourceTree = "<group>"; };
+		DE7AF5CD2A145F1C005891F5 /* IssuedTicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuedTicketsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				BC56B0EC2A0A918B00099FCA /* Assets.xcassets */,
 				BC56B0EE2A0A918B00099FCA /* LaunchScreen.storyboard */,
 				BC56B0F12A0A918B00099FCA /* Info.plist */,
+				DE7AF5CB2A145EDB005891F5 /* BookingHistoryViewController.swift */,
+				DE7AF5CD2A145F1C005891F5 /* IssuedTicketsViewController.swift */,
 			);
 			path = Assignment3;
 			sourceTree = "<group>";
@@ -259,8 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC56B0E82A0A918A00099FCA /* ViewController.swift in Sources */,
+				DE7AF5CE2A145F1C005891F5 /* IssuedTicketsViewController.swift in Sources */,
 				BC56B0E42A0A918A00099FCA /* AppDelegate.swift in Sources */,
 				BC56B0E62A0A918A00099FCA /* SceneDelegate.swift in Sources */,
+				DE7AF5CC2A145EDB005891F5 /* BookingHistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
