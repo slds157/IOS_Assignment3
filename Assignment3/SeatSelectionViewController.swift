@@ -8,14 +8,17 @@
 import UIKit
 
 class SeatSelectionViewController: UIViewController {
-    private var seats: [[Seat]] = Array(repeating: Array(repeating: Seat(row: 0, column: 0, status: .available), count: 10), count: 6)
+    private var seats: [[Seat]] = Array(repeating: Array(repeating: Seat(row: 0, column: 0, status: .available), count: 6), count: 10)
     private var seatButtons: [[SeatButton]] = []
     private let seatButtonSize: CGSize = CGSize(width: 40, height: 40)
     private let seatButtonSpacing: CGFloat = 10
+    private var movie: String = "Movie1"
+    private var showTime: String = "Show1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initializeSeats()
+
+        loadSeatsFromUserDefaults()
         setupSeatButtons()
     }
     
@@ -25,6 +28,18 @@ class SeatSelectionViewController: UIViewController {
                 seats[row][column] = Seat(row: row, column: column, status: .available)
             }
         }
+    }
+    private func loadSeatsFromUserDefaults() {
+        let defaults = UserDefaults.standard
+
+        if let savedSeats = defaults.object(forKey: "\(movie)\(showTime)Seats") as? Data {
+            let decoder = PropertyListDecoder()
+            if let loadedSeats = try? decoder.decode([[Seat]].self, from: savedSeats) {
+                seats = loadedSeats
+                return
+            }
+        }
+        initializeSeats()
     }
     
     private func setupSeatButtons() {
@@ -61,4 +76,13 @@ class SeatSelectionViewController: UIViewController {
             }
             sender.updateAppearance()
         }
+    
+    private func saveSeatsToUserDefaults() {
+        let defaults = UserDefaults.standard
+        let encoder = PropertyListEncoder()
+
+        if let savedData = try? encoder.encode(seats) {
+            defaults.set(savedData, forKey: "\(movie)\(showTime)Seats")
+        }
+    }
 }
