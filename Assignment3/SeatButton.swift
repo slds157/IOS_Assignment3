@@ -40,3 +40,4 @@ enum SeatStatus: Int, Codable {
     case occupied
     case unavailable
 }
+
