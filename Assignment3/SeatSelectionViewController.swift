@@ -40,6 +40,9 @@ class SeatSelectionViewController: UIViewController {
             for column in 0..<numberOfColumns {
                 let seatButton = SeatButton(type: .custom)
                 seatButton.configure(seat: seats[row][column])
+                
+                seatButton.addTarget(self, action: #selector(seatButtonTapped(_:)), for: .touchUpInside)
+                
                 let x = startX + CGFloat(column) * (seatButtonSize.width + seatButtonSpacing)
                 let y = startY + CGFloat(row) * (seatButtonSize.height + seatButtonSpacing)
                 seatButton.frame = CGRect(x: x, y: y, width: seatButtonSize.width, height: seatButtonSize.height)
@@ -49,4 +52,13 @@ class SeatSelectionViewController: UIViewController {
             seatButtons.append(buttonRow)
         }
     }
+    
+    @objc private func seatButtonTapped(_ sender: SeatButton) {
+            if sender.seat.status == .available {
+                sender.seat.status = .occupied
+            } else if sender.seat.status == .occupied {
+                sender.seat.status = .available
+            }
+            sender.updateAppearance()
+        }
 }
